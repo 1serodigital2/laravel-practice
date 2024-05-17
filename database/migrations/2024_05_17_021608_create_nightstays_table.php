@@ -11,18 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('nightstays', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
-            $table->boolean('status')->default(1)->comment('Category status');
+            $table->string('name');
+            $table->foreignId('category_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('nightstays');
     }
 };
