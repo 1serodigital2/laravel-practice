@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @stack('styles')
     <title>Document</title>
 </head>
 
@@ -15,6 +16,7 @@
     @else
         <div>Content not found</div>
     @endif
+    @include('layouts.partials.footer')
 </body>
 
 </html>

@@ -1,4 +1,4 @@
 @extends('layouts.master')
 @section('content')
-    <h1>homepage</h1>
+    <h1>About Us</h1>
 @endsection
