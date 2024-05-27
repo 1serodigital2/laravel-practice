@@ -18,7 +18,7 @@ class NightstaySeeder extends Seeder
         //         'name' => ''
         //     ]
         // ])
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 5; $i++) {
             nightstay::create([
                 'name' => 'nightstay ' . $i,
                 'category_id' => $i,
