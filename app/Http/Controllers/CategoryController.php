@@ -11,7 +11,15 @@ class CategoryController extends Controller
     {
         $categories = DB::table('categories')->get();
         // return response()->json($categories);
-        return $categories;
+        // return $categories; //raw data
         // dd($categories); //laravel inbuilt method to test data
+
+        return view('allcategories', ['data' => $categories]);
+    }
+
+    public function singleCategory(string $id)
+    {
+        $category = DB::table('categories')->where('id', $id)->get();
+        return $category;
     }
 }

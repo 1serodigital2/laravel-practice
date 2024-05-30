@@ -10,6 +10,7 @@ class NightsaysController extends Controller
     public function showNightstays()
     {
         $nightstays = DB::table('nightstays')->get();
-        return $nightstays;
+        // return $nightstays;
+        return view('allnightstays', ['data' => $nightstays]);
     }
 }
