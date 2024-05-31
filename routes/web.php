@@ -17,4 +17,4 @@ Route::get('/about', function () {
 Route::get('/categories', [CategoryController::class, 'showCategory'])->name('categories');
 Route::get('/nightstays', [NightsaysController::class, 'shownightstays'])->name('nightstays');
 Route::get('/packages', [PackagesController::class, 'showPackages'])->name('packages');
-Route::get('/category/{$id}', [CategoryController::class, 'singleCategory'])->name('view.category');
+Route::get('/category/{id}', [CategoryController::class, 'singleCategory'])->name('view.category');

@@ -3,12 +3,12 @@
 @section('content')
     <div class="container my-4">
 
-        <h1>All Categories</h1>
+        <h1>Category Detail</h1>
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>SL No</th>
-                    <th>name</th>
+                    <th>Name</th>
                     <th>Created At</th>
                     <th>Updated At</th>
                 </tr>
@@ -23,8 +23,6 @@
                         <td>{{ $category->name }}</td>
                         <td>{{ $category->created_at }}</td>
                         <td>{{ $category->updated_at }}</td>
-                        <td><a href="{{ route('view.category', $category->id) }}" class="btn btn-sm btn-info">View
-                                category</a></td>
                     </tr>
                 @endforeach
             </tbody>

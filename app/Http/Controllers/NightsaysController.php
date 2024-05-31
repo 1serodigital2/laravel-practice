@@ -9,7 +9,12 @@ class NightsaysController extends Controller
 {
     public function showNightstays()
     {
-        $nightstays = DB::table('nightstays')->get();
+        // $nightstays = DB::table('nightstays')->get();
+        $nightstays = DB::table('nightstays as a')
+            ->join('categories as b', 'a.category_id', '=', 'b.id')
+            ->select('a.*', 'b.name as cat_name')
+            ->get();
+
         // return $nightstays;
         return view('allnightstays', ['data' => $nightstays]);
     }

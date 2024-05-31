@@ -7,8 +7,8 @@
         echo '</pre>';
     @endphp --}}
     <div class="container my-4">
-        <h1>All Nightstays</h1>
-        <table class="table table-striped table-hovered table-border">
+        <h1 class="mb-4">All Nightstays</h1>
+        <table class="table table-striped table-hovered table-bordered">
             <thead>
                 <tr>
                     <th>Sl No</th>
@@ -28,7 +28,7 @@
                     <tr>
                         <td>{{ $c++ }}</td>
                         <td>{{ $nstay->name }}</td>
-                        <td>{{ $nstay->category_id }}</td>
+                        <td>{{ $nstay->cat_name }}</td>
                         <td>{{ $nstay->status }}</td>
                         <td>{{ $nstay->created_at }}</td>
                         <td>{{ $nstay->updated_at }}</td>

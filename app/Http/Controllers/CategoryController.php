@@ -20,6 +20,7 @@ class CategoryController extends Controller
     public function singleCategory(string $id)
     {
         $category = DB::table('categories')->where('id', $id)->get();
-        return $category;
+        // return $category;
+        return view('category', ['data' => $category]);
     }
 }
