@@ -21,6 +21,31 @@ class CategoryController extends Controller
     {
         $category = DB::table('categories')->where('id', $id)->get();
         // return $category;
+        // dd($category);
         return view('category', ['data' => $category]);
+    }
+
+    public function addCategory()
+    {
+        $category = DB::table('categories')
+            ->insert([
+                [
+                    'name' => 'Lachen',
+                    'created_at' => now()
+                ],
+                [
+                    'name' => 'Shillong',
+                    'created_at' => now()
+                ]
+            ]);
+        // ->insert([
+        //     'name' => 'Lachung',
+        //     'created_at' => now()
+        // ]);
+        // dd($category);
+        if ($category) {
+            echo '<h1>Category added successfully</h1>';
+        }
+        // return $category;
     }
 }

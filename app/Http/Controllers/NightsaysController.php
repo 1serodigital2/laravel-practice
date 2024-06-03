@@ -18,4 +18,14 @@ class NightsaysController extends Controller
         // return $nightstays;
         return view('allnightstays', ['data' => $nightstays]);
     }
+    public function singleNightstay(string $id)
+    {
+        $nightstay = DB::table('nightstays as a')
+            ->join('categories as b', 'a.category_id', '=', 'b.id')
+            ->select('a.*', 'b.name as cat_name')
+            ->where('a.id', $id)
+            ->get();
+        // return $nightstay;
+        return view('allnightstays', ['data' => $nightstay]);
+    }
 }

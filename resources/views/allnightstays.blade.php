@@ -32,7 +32,7 @@
                         <td>{{ $nstay->status }}</td>
                         <td>{{ $nstay->created_at }}</td>
                         <td>{{ $nstay->updated_at }}</td>
-                        <td><a href="">Edit</a></td>
+                        <td><a href="{{ route('view.nightstay', $nstay->id) }}">View</a></td>
                     </tr>
                 @endforeach
 
