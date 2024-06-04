@@ -9,7 +9,6 @@ class PackagesController extends Controller
 {
     public function showPackages()
     {
-        // $packages = DB::table('packages')->get();
         $packages = DB::table('packages as a')
             ->join('categories as b', 'a.category_id', '=', 'b.id')
             ->join('nightstays as c', 'a.nightstay_id', '=', 'c.id')
@@ -26,5 +25,21 @@ class PackagesController extends Controller
 
         // return $packages;
         return view('allpackages', ['data' => $packages]);
+    }
+
+    public function singlePackage(string $id)
+    {
+        $package = DB::table('packages as a')
+            ->join('categories as b', 'a.category_id', '=', 'b.id')
+            ->join('nightstays as c', 'a.nightstay_id', '=', 'c.id')
+            ->select(
+                'a.*',
+                'b.name as cat_name',
+                'c.name as nightstay'
+            )
+            ->where('a.id', $id)->get();
+        // dd($package);
+        // return $package;
+        return view('package', ['package' => $package]);
     }
 }

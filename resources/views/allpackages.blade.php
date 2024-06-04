@@ -27,7 +27,7 @@
                         <td>{{ $package->cat_name }}</td>
                         <td>{{ $package->nightstay }}</td>
                         <td>{{ $package->status }}</td>
-                        <td><a href="" class="btn btn-sm btn-info">View</a></td>
+                        <td><a href="{{ route('view.package', $package->pkg_id) }}" class="btn btn-sm btn-info">View</a></td>
                     </tr>
                 @endforeach
             </tbody>
