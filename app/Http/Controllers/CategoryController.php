@@ -48,4 +48,32 @@ class CategoryController extends Controller
         }
         // return $category;
     }
+
+    public function updateCategory(string $id)
+    {
+        $category = DB::table('categories')
+            ->where('id', $id)
+            ->update([
+                'name' => 'Test Category'
+            ]);
+
+        // dd($category);
+        if ($category) {
+            echo '<h1>Category updated successfully</h1>';
+        }
+    }
+
+    public function deleteCategory(string $id)
+    {
+        $category = DB::table('categories')
+            ->where('id', $id)
+            ->delete();
+
+        if ($category) {
+            // echo '<h1>Category id=' . $id . ' deleted successfully</h1>';
+            return redirect()->route('categories');
+        } else {
+            echo '<h1>Something went wrong</h1>';
+        }
+    }
 }

@@ -15,8 +15,10 @@ Route::get('/about', function () {
 })->name('about-us');
 
 Route::get('/categories', [CategoryController::class, 'showCategory'])->name('categories');
-Route::get('/add-category', [CategoryController::class, 'addCategory'])->name('view.addCategory');
+Route::get('/add-category', [CategoryController::class, 'addCategory'])->name('add.category');
 Route::get('/category/{id}', [CategoryController::class, 'singleCategory'])->name('view.category');
+Route::get('/update-category/{id}', [CategoryController::class, 'updateCategory'])->name('update.category');
+Route::get('/delete-category/{id}', [CategoryController::class, 'deleteCategory'])->name('delete.category');
 
 Route::get('/nightstays', [NightsaysController::class, 'shownightstays'])->name('nightstays');
 Route::get('/nightstay/{id}', [NightsaysController::class, 'singleNightstay'])->name('view.nightstay');
