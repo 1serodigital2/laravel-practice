@@ -14,6 +14,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/all-categories">Categories</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('all.nightstays') }}">Nightstays</a>
+                    </li>
 
                 </ul>
                 <form class="d-flex" role="search">

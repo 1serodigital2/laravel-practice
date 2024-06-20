@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\NightstayController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,3 +17,10 @@ Route::controller(CategoryController::class)->group(function () {
     Route::get('/delete-category/{id}', 'deleteCategory')->name('delete.category');
 });
 Route::view('add-category', '/addcategory');
+
+Route::controller(NightstayController::class)->group(function () {
+    Route::get('/all-nightstays', 'allNightstays')->name('all.nightstays');
+    Route::get('/add-nightstay', 'addNightstayPage')->name('add.nightstaypage');
+    Route::post('/add-nightstay', 'addNightstay')->name('add.nightstay');
+    Route::get('/view-nightstay/{id}', 'viewNightstay')->name('view.nightstay');
+});
