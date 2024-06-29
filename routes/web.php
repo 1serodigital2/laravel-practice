@@ -18,9 +18,12 @@ Route::controller(CategoryController::class)->group(function () {
 });
 Route::view('add-category', '/addcategory');
 
-Route::controller(NightstayController::class)->group(function () {
-    Route::get('/all-nightstays', 'allNightstays')->name('all.nightstays');
-    Route::get('/add-nightstay', 'addNightstayPage')->name('add.nightstaypage');
-    Route::post('/add-nightstay', 'addNightstay')->name('add.nightstay');
-    Route::get('/view-nightstay/{id}', 'viewNightstay')->name('view.nightstay');
-});
+// Route::controller(NightstayController::class)->group(function () {
+//     Route::get('/all-nightstays', 'allNightstays')->name('all.nightstays');
+//     Route::get('/add-nightstay', 'showNightstayForm')->name('show.nightstayform');
+//     Route::post('/nightstayform/{id?}', 'submitNightstayForm')->name('submit.nightstayform');
+//     Route::get('/view-nightstay/{id}', 'viewNightstay')->name('view.nightstay');
+//     Route::get('/delete-nightstay/{id}', 'deleteNightstay')->name('delete.nightstay');
+// });
+
+Route::resource('nightstays', NightstayController::class);

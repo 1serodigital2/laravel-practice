@@ -15,7 +15,7 @@
                         <a class="nav-link" href="/all-categories">Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('all.nightstays') }}">Nightstays</a>
+                        <a class="nav-link" href="{{ route('nightstays.index') }}">Nightstays</a>
                     </li>
 
                 </ul>
